@@ -1,5 +1,3 @@
-CONVERT=gm convert
-
 all: latexsheet.pdf latexsheet-a4.pdf latexsheet-0.png latexsheet-thumb-0.png
 
 clean:
@@ -22,7 +20,7 @@ latexsheet-a4.pdf: latexsheet-a4.tex
 	rm -f latexsheet-a4.tex latexsheet-a4.aux latexsheet-a4.log latexsheet-a4.out
 
 latexsheet-0.png: latexsheet.pdf
-	$(CONVERT) -density 100x100 +adjoin latexsheet.pdf latexsheet-%d.png
+	gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r150 -sOutputFile="latexsheet-%d.png" "latexsheet.pdf"
 
 latexsheet-thumb-0.png: latexsheet.pdf
-	$(CONVERT) -density 32x32 +adjoin latexsheet.pdf latexsheet-thumb-%d.png
+	gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r32 -sOutputFile="latexsheet-thumb-%d.png" "latexsheet.pdf"

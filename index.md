@@ -30,8 +30,9 @@ This is a latex reference sheet which is geared toward writing scientific papers
 
 PNG images of the reference sheet:
 
-[![](latexsheet-thumb-0.png)](latexsheet-0.png)
 [![](latexsheet-thumb-1.png)](latexsheet-1.png)
+[![](latexsheet-thumb-2.png)](latexsheet-2.png)
+[![](latexsheet-thumb-3.png)](latexsheet-3.png)
 
 ### Download
 

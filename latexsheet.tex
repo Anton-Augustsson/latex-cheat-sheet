@@ -5,6 +5,12 @@
 \usepackage[landscape]{geometry}
 \usepackage{hyperref}
 \usepackage{siunitx}
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily, % Use monospace font
+    breaklines=true,      % Break lines automatically
+    breakatwhitespace=true % Prefer to break at spaces
+}
 
 
 % This sets page margins to .5 inch if using letter paper, and to 1cm
@@ -570,7 +576,7 @@ $\Omega$        &  \verb!\Omega!
 \footnotesize
 
 \subsection{SI Units}
-With \verb!\usepackage{siunitx}\verb! you can use correctly formated SI units. Simply write \verb!\si{\<unit name>}! for single units and to write quantities use \verb!\SI[<option>]{<quantity>}{<units>}!, e.g., $\SI[per-mode = fraction]{8.85e-12}{\coulomb\squared\per\newton\meter\squared}$. However, it is important to note that the quantity needs to me a number, e.g., \verb!8.85e-12! and not using commands such as \verb!8.85\times10^{-12}! where both \verb!\times! and \verb!10^{-12}! is problematic. 
+With \verb!\usepackage{siunitx}\verb! you can use correctly formated SI units. Simply write \verb!\si{\<unit name>}! for single units and to write quantities use \verb!\SI[<option>]{<quantity>}{<units>}!, e.g., $\SI[per-mode = fraction]{8.85e-12}{\coulomb\squared\per\newton\meter\squared}$ \lstinline!\SI[per-mode = fraction]{8.85e-12}{ \coulomb\squared\per\newton\meter\squared}!. However, it is important to note that the quantity needs to me a number, e.g., \verb!8.85e-12! and not using commands such as \verb!8.85\times10^{-12}! where both \verb!\times! and \verb!10^{-12}! is problematic. 
 There are multiple versions of \textit{siunitx}, the syntax shown is for the old version. 
 
 
