@@ -4,34 +4,7 @@
 \usepackage{ifthen}
 \usepackage[landscape]{geometry}
 \usepackage{hyperref}
-
-% To make this come out properly in landscape mode, do one of the following
-% 1.
-%  pdflatex latexsheet.tex
-%
-% 2.
-%  latex latexsheet.tex
-%  dvips -P pdf  -t landscape latexsheet.dvi
-%  ps2pdf latexsheet.ps
-
-
-% If you're reading this, be prepared for confusion.  Making this was
-% a learning experience for me, and it shows.  Much of the placement
-% was hacked in; if you make it better, let me know...
-
-
-% 2008-04
-% Changed page margin code to use the geometry package. Also added code for
-% conditional page margins, depending on paper size. Thanks to Uwe Ziegenhagen
-% for the suggestions.
-
-% 2006-08
-% Made changes based on suggestions from Gene Cooperman. <gene at ccs.neu.edu>
-
-
-% To Do:
-% \listoffigures \listoftables
-% \setcounter{secnumdepth}{0}
+\usepackage{siunitx}
 
 
 % This sets page margins to .5 inch if using letter paper, and to 1cm
@@ -94,7 +67,7 @@
 \setlength{\columnsep}{2pt}
 
 \begin{center}
-     \Large{\textbf{\LaTeXe\ Cheat Sheet}} \\
+     \Large{\textbf{\LaTeX\ Cheat Sheet}} \\
 \end{center}
 
 \section{Document classes}
@@ -595,6 +568,73 @@ $\Psi$          &  \verb!\Psi!  &
 $\Omega$        &  \verb!\Omega!  
 \end{tabular}
 \footnotesize
+
+\subsection{SI Units}
+With \verb!\usepackage{siunitx}\verb! you can use correctly formated SI units. Simply write \verb!\si{\<unit name>}! for single units and to write quantities use \verb!\SI[<option>]{<quantity>}{<units>}!, e.g., $\SI[per-mode = fraction]{8.85e-12}{\coulomb\squared\per\newton\meter\squared}$. However, it is important to note that the quantity needs to me a number, e.g., \verb!8.85e-12! and not using commands such as \verb!8.85\times10^{-12}! where both \verb!\times! and \verb!10^{-12}! is problematic. 
+There are multiple versions of \textit{siunitx}, the syntax shown is for the old version. 
+
+
+\subsubsection{Base SI Units}
+\begin{tabular}{@{}l@{\hspace{2em}}l@{\hspace{2em}}l@{}}
+$\si{\meter}$     &  \verb!\si{\meter}! or \verb!\si{\m}!  \\  
+$\si{\kilogram}$  &  \verb!\si{\kilogram}! or \verb!\si{\kg}!   \\ 
+$\si{\second}$    &  \verb!\si{\second}! or \verb!\si{\s}!   \\ 
+$\si{\ampere}$    &  \verb!\si{\ampere}! or \verb!\si{\A}!   \\ 
+$\si{\kelvin}$    &  \verb!\si{\kelvin}! or \verb!\si{\K}!   \\ 
+$\si{\mole}$      &  \verb!\si{\mole}! or \verb!\si{\mol}!   \\ 
+$\si{\candela}$   &  \verb!\si{\candela}! or \verb!\si{\cd}!   \\ 
+\end{tabular}
+
+\subsubsection{Derived SI Units}
+\begin{tabular}{@{}l@{\hspace{2em}}l@{\hspace{2em}}l@{}}
+$\si{\hertz}$     &  \verb!\si{\hertz}! or \verb!\si{\Hz}!  \\  
+$\si{\newton}$    &  \verb!\si{\newton}! or \verb!\si{\N}!   \\ 
+$\si{\pascal}$    &  \verb!\si{\pascal}! or \verb!\si{\Pa}!   \\ 
+$\si{\joule}$     &  \verb!\si{\joule}! or \verb!\si{\J}!   \\ 
+$\si{\watt}$      &  \verb!\si{\watt}! or \verb!\si{\W}!   \\ 
+$\si{\coulomb}$   &  \verb!\si{\coulomb}! or \verb!\si{\C}!   \\ 
+$\si{\volt}$      &  \verb!\si{\volt}! or \verb!\si{\V}!   \\ 
+$\si{\ohm}$       &  \verb!\si{\ohm}!   \\ 
+$\si{\siemens}$   &  \verb!\si{\siemens}! or \verb!\si{\S}!   \\ 
+$\si{\weber}$     &  \verb!\si{\weber}! or \verb!\si{\Wb}!   \\ 
+$\si{\tesla}$     &  \verb!\si{\tesla}! or \verb!\si{\T}!   \\ 
+$\si{\henry}$     &  \verb!\si{\henry}! or \verb!\si{\H}!   \\ 
+$\si{\degreeCelsius}$  &  \verb!\si{\degreeCelsius}!  \\ 
+$\si{\lumen}$     &  \verb!\si{\lumen}! or \verb!\si{\lm}!   \\ 
+$\si{\lux}$       &  \verb!\si{\lux}! or \verb!\si{\lx}!   \\ 
+$\si{\becquerel}$ &  \verb!\si{\becquerel}! or \verb!\si{\Bq}!   \\ 
+$\si{\gray}$      &  \verb!\si{\gray}! or \verb!\si{\Gy}!   \\ 
+$\si{\katal}$     &  \verb!\si{\katal}! or \verb!\si{\kat}!   \\ 
+$\si{\radian}$    &  \verb!\si{\radian}!  \\ 
+$\si{\steradian}$ &  \verb!\si{\steradian}!  \\ 
+\end{tabular}
+
+\subsubsection{SI Prefixes}
+\begin{tabular}{@{}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1em}}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1em}}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1em}}l@{}}
+  $10^{24}$       & $\si{\yotta}$     &  \verb!\si{\yotta}!  & 
+  $10^{21}$       & $\si{\zetta}$     &  \verb!\si{\zetta}! \\
+  $10^{18}$       & $\si{\exa}$       &  \verb!\si{\exa}! &
+  $10^{15}$       & $\si{\peta}$      &  \verb!\si{\peta}! \\
+  $10^{11}$       & $\si{\tera}$      &  \verb!\si{\tera}! &
+  $10^{9}$        & $\si{\giga}$      &  \verb!\si{\giga}! \\  
+  $10^{6}$        & $\si{\mega}$      &  \verb!\si{\mega}! &
+  $10^{3}$        & $\si{\kilo}$      &  \verb!\si{\kilo}! \\
+  $10^{2}$        & $\si{\hecto}$     &  \verb!\si{\hecto}! &
+  $10^{1}$        & $\si{\deka}$      &  \verb!\si{\deka}! \\
+  $10^{-1}$       & $\si{\deci}$      &  \verb!\si{\deci}! &
+  $10^{-2}$       & $\si{\centi}$     &  \verb!\si{\centi}! \\  
+  $10^{-3}$       & $\si{\milli}$     &  \verb!\si{\milli}! &
+  $10^{-6}$       & $\si{\micro}$     &  \verb!\si{\micro}! \\
+  $10^{-9}$       & $\si{\nano}$      &  \verb!\si{\nano}! &
+  $10^{-12}$      & $\si{\pico}$      &  \verb!\si{\pico}! \\
+  $10^{-15}$      & $\si{\femto}$     &  \verb!\si{\femto}! &
+  $10^{-18}$      & $\si{\atto}$      &  \verb!\si{\atto}! \\
+  $10^{-21}$      & $\si{\zepto}$     &  \verb!\si{\zepto}! &
+  $10^{-24}$      & $\si{\yocto}$     &  \verb!\si{\yocto}! \\
+\end{tabular}
+
+
+
 
 %\subsection{Special symbols}
 %\begin{tabular}{@{}ll@{}}

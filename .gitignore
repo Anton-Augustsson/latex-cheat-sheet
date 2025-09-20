@@ -1,1 +1,7 @@
 _site/
+*.aux
+*.fdb_latexmk
+*.log
+*.out
+*.fls
+*.synctex.gz
